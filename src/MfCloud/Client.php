@@ -5,7 +5,6 @@ namespace MfCloud;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Client as Guzzle;
 
-
 class Client
 {
     const BASE_URL = 'https://invoice.moneyforward.com/api';
@@ -24,19 +23,24 @@ class Client
 
         if (is_null($guzzle)) {
             $this->guzzle = new Guzzle([
-                'headers' => ['Authorization' => 'Bearer '.$this->accessToken]
+                'headers' => [
+                    'Authorization' => 'Bearer '.$this->accessToken,
+                    'Content-Type' => 'application/json',
+                    'Accept' => '*/*',
+                ]
             ]);
         }
-
-        $this->checkAuthorization();
 
         $this->apiVersion = $apiVersion;
     }
 
     public function get(string $path, array $params = [])
     {
-        $fullUrl = $this->buildUrl($path);
-        return $this->guzzle->request('GET', $fullUrl, $params)->getBody();
+        return (string)$this->guzzle->request(
+            'GET',
+            $this->buildUrl($path),
+            $params
+        )->getBody();
     }
 
     protected function buildUrl($path) : string
@@ -44,12 +48,4 @@ class Client
         return implode('/', [static::BASE_URL, $this->apiVersion, $path]);
     }
 
-    protected function checkAuthorization()
-    {
-        try {
-            $this->guzzle->request('GET', $this->buildUrl('office'));
-        } catch (ClientException $e) {
-            echo '401 Unauthorized... Given access token must be wrong.'."\n\n";
-        }
-    }
 }
