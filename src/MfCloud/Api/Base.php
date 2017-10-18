@@ -50,10 +50,17 @@ class Base
      */
     public function update(string $id, array $params = []) : bool
     {
-        return new Collection($this->client->put(
-            $this->path.'/'.$id,
-            $this->buildBody($params)
-        ));
+        $this->client->put($this->path.'/'.$id, $this->buildBody($params));
+
+        return true;
+    }
+
+    /*
+     * Delete a record in the repository.
+     */
+    public function delete(string $id) : bool
+    {
+        $this->client->delete($this->path.'/'.$id);
 
         return true;
     }

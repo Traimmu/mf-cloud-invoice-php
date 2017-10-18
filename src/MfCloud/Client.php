@@ -69,6 +69,16 @@ class Client
         return $this->request('POST', $path, $params);
     }
 
+    public function put(string $path, array $params = [])
+    {
+        return $this->request('PUT', $path, $params);
+    }
+
+    public function delete(string $path)
+    {
+        return $this->request('PUT', $path);
+    }
+
     protected function request(string $method, string $path, array $params = [])
     {
         $body = (string)$this->guzzle->request(
