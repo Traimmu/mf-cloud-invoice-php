@@ -3,12 +3,13 @@
 namespace Traimmu\MfCloud\Invoice\Api;
 
 use Traimmu\MfCloud\Invoice\Api\Base;
+use Traimmu\MfCloud\Invoice\Models\Item as Model;
 
 class Item extends Base
 {
     protected $baseName = 'item';
 
-    protected $collectionKey = 'items';
+    protected $model = Model::class;
 
     protected $path = 'items';
 

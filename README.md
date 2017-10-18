@@ -27,9 +27,17 @@ $client->billings()->all();
 
 ```php
 $office = $client->office()->get(); // => returns Illuminate\Support\Collection instance
+echo $office->get('name') // => 'Sample office'
 
+$client->office()->update([
+    'name' => 'section9',
+    'zip' => '101-1111',
+]);
+$client->office()->get(); // => returns Illuminate\Support\Collection instance
 echo $office->get('name') // => 'Sample office'
 ```
+
+# Loadmap
 
 <!--
 

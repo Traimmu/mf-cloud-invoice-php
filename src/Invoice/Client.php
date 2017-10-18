@@ -41,7 +41,7 @@ class Client
 
     public function office()
     {
-        return new Office($this);
+        return (new Office($this))->first();
     }
 
     public function items()
@@ -59,27 +59,27 @@ class Client
         return new Billing($this);
     }
 
-    public function get(string $path, array $params = [])
+    public function get(string $path, array $params = []) : array
     {
         return $this->request('GET', $path, $params);
     }
 
-    public function post(string $path, array $params = [])
+    public function post(string $path, array $params = []) : array
     {
         return $this->request('POST', $path, $params);
     }
 
-    public function put(string $path, array $params = [])
+    public function put(string $path, array $params = []) : array
     {
         return $this->request('PUT', $path, $params);
     }
 
-    public function delete(string $path)
+    public function delete(string $path) : array
     {
         return $this->request('PUT', $path);
     }
 
-    protected function request(string $method, string $path, array $params = [])
+    protected function request(string $method, string $path, array $params = []) : array
     {
         $body = (string)$this->guzzle->request(
             $method,

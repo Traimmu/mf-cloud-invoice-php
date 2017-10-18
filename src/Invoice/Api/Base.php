@@ -18,41 +18,57 @@ class Base
     }
 
     /*
-     * Get all of the models from the repository.
+     * Get one of the models from the repository.
+     *
+     * TODO: add limitation to api request.
      */
-    public function all(array $params = []) : Collection
+    public function first()
     {
-        $res = $this->client->get($this->path, $params);
-        return new Collection($res[$this->path]);
+        return $this->all()->first();
     }
 
     /*
      * Find a model by its primary key.
      */
-    public function find(string $id, array $params = []) : Collection
+    public function find(string $id, array $params = [])
     {
-        return new Collection($this->client->get($this->path.'/'.$id, $params));
+        return new $this->model(
+            $this->client->get($this->path.'/'.$id, $params),
+            $this
+        );
+    }
+
+    /*
+     * Get all of the models from the repository.
+     */
+    public function all() : Collection
+    {
+        $res = $this->client->get($this->path);
+        return collect($res[$this->path])->map(function ($attributes) {
+            return new $this->model($attributes, $this);
+        });
     }
 
     /*
      * Save a new model and return the instance.
      */
-    public function create(array $params = []) : Collection
+    public function create(array $params = [])
     {
-        return new Collection($this->client->post(
-            $this->path,
-            $this->buildBody($params)
-        ));
+        $response = $this->client->post($this->path, $this->buildBody($params));
+        return new $this->model($response);
     }
 
     /*
      * Update a record in the repository.
      */
-    public function update(string $id, array $params = []) : bool
+    public function update(string $id, array $params = [])
     {
-        $this->client->put($this->path.'/'.$id, $this->buildBody($params));
+        $response = $this->client->put(
+            $this->path.'/'.$id,
+            $this->buildBody($params)
+        );
 
-        return true;
+        return new $this->model($response, $this);
     }
 
     /*

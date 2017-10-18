@@ -3,24 +3,21 @@
 namespace Traimmu\MfCloud\Invoice\Api;
 
 use Traimmu\MfCloud\Invoice\Api\Base;
-use Illuminate\Support\Collection;
+use Traimmu\MfCloud\Invoice\Models\Office as Model;
 
 class Office extends Base
 {
     protected $path = 'office';
 
-    protected $allowedMethods = ['get', 'update'];
+    protected $model = Model::class;
 
-    public function get() : Collection
+    protected $baseName = 'office';
+
+    protected $allowedMethods = ['first', 'update'];
+
+    public function first() : Model
     {
-        return new Collection($this->client->get($this->path));
+        return new Model($this->client->get($this->path), $this);
     }
 
-    /*
-     * TODO: 継承できるようにする
-     */
-    public function updateSelf(array $params = []) : Collection
-    {
-        return new Collection($this->client->put($this->path, $this->buildUrl($params)));
-    }
 }
