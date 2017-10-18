@@ -29,13 +29,13 @@ $client->billings()->all();
 
 ```php
 $office = $client->office(); // => returns Traimmu\MfCloud\Invoice\Models\Office instance
-echo $office->name; // => 'Sample office'
+echo $office->name; // => '株式会社Traimmu'
 
 $office->update([
     'name' => 'section9',
     'zip' => '101-1111',
 ]);
-echo $office->name; // => 'Sample office'
+echo $office->name; // => '150-0033'
 ```
 
 # Loadmap

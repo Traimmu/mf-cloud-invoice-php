@@ -12,6 +12,8 @@ class Office extends Base
 
     public function update(array $params)
     {
-        return $this->api->update('', $params);
+        $this->attributes = $this->api->update('', $params);
+
+        return $this;
     }
 }
