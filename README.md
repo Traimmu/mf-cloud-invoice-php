@@ -2,11 +2,7 @@
 
 [MFクラウド請求書API](https://github.com/moneyforward/invoice-api-doc) client library for PHP
 
-[Under developing]
-
 # Installation
-
-TODO: upload to composer
 
 ```
 composer require traimmu/mf_cloud-invoice
@@ -21,8 +17,8 @@ use Traimmu\MfCloud\Invoice\Client;
 
 $client = new Client('YOUR_ACCESS_TOKEN');
 
-$client->billings->all();
-# => your billings
+$client->billings()->all();
+// => your billings
 ```
 
 ## Basic usage
@@ -31,8 +27,7 @@ $client->billings->all();
 // get information
 $office = $client->office()->get() // => returns Illuminate\Support\Collection instance;
 
-echo $office->get('name')
-//=> 'Sample office'
+echo $office->get('name') // => 'Sample office'
 ```
 
 ### Office
