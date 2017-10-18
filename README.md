@@ -4,6 +4,8 @@
 
 [MFクラウド請求書API](https://github.com/moneyforward/invoice-api-doc) client library for PHP
 
+This library is inspired by [moneyforward/mf_cloud-invoice-ruby](https://github.com/moneyforward/mf_cloud-invoice-ruby)
+
 # Installation
 
 ```
@@ -33,7 +35,7 @@ $office->update([
     'name' => 'section9',
     'zip' => '101-1111',
 ]);
-echo $office->get('name'); // => 'Sample office'
+echo $office->name; // => 'Sample office'
 ```
 
 # Loadmap
