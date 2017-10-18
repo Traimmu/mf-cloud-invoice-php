@@ -40,15 +40,16 @@ echo $office->name; // => '150-0033'
 
 # Loadmap
 
-<!--
+- [ ] Add tests
+- [ ] Add more documents
+- [ ] Add Exceptions
+- [ ] Add authentication for getting OAuth token
 
-### Billings
-### Partners
-### Items
+<!-- ### Billings -->
+<!-- ### Partners -->
+<!-- ### Items -->
 
 ## Errors
-
--->
 
 # Development
 
