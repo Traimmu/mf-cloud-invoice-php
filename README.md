@@ -26,6 +26,15 @@ $client->billings->all();
 ```
 
 ## Basic usage
+
+```php
+// get information
+$office = $client->office()->get() // => returns Illuminate\Support\Collection instance;
+
+echo $office->get('name')
+//=> 'Sample office'
+```
+
 ### Office
 ### Billings
 ### Partners
@@ -34,3 +43,5 @@ $client->billings->all();
 # Development
 # Contributing
 # License
+
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
