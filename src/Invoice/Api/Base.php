@@ -1,8 +1,8 @@
 <?php
 
-namespace MfCloud\Api;
+namespace Traimmu\MfCloud\Invoice\Api;
 
-use MfCloud\Client;
+use Traimmu\MfCloud\Invoice\Client;
 use Illuminate\Support\Collection;
 
 class Base

@@ -1,13 +1,13 @@
 <?php
 
-namespace MfCloud;
+namespace Traimmu\MfCloud\Invoice;
 
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Client as Guzzle;
-use MfCloud\Api\Office;
-use MfCloud\Api\Partner;
-use MfCloud\Api\Item;
-use MfCloud\Api\Billing;
+use Traimmu\MfCloud\Invoice\Api\Office;
+use Traimmu\MfCloud\Invoice\Api\Partner;
+use Traimmu\MfCloud\Invoice\Api\Item;
+use Traimmu\MfCloud\Invoice\Api\Billing;
 
 class Client
 {
@@ -17,7 +17,7 @@ class Client
     protected $accessToken, $apiVersion;
 
     /**
-     * Create a new MfCloud client.
+     * Create a new Traimmu\MfCloud\Invoice client.
      */
     public function __construct(
         string $accessToken,

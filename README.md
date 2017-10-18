@@ -16,7 +16,7 @@ TODO: upload to composer
 ## Build client
 
 ```php
-use MfCloud\Client;
+use Traimmu\MfCloud\Invoice\Client;
 
 $client = new Client('YOUR_ACCESS_TOKEN');
 

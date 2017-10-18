@@ -1,8 +1,8 @@
 <?php
 
-namespace MfCloud\Api;
+namespace Traimmu\MfCloud\Invoice\Api;
 
-use MfCloud\Api\Base;
+use Traimmu\MfCloud\Invoice\Api\Base;
 use Illuminate\Support\Collection;
 
 class Office extends Base
