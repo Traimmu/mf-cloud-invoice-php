@@ -1,5 +1,5 @@
 {
-    "name": "traimmu/mf_cloud-invoice",
+    "name": "traimmu/mf-cloud-invoice",
     "description": "MFCloud Invoice API wrapper",
     "type": "library",
     "license": "MIT",
@@ -9,7 +9,7 @@
             "email": "ketsume0211@gmail.com"
         }
     ],
-    "minimum-stability": "beta",
+    "minimum-stability": "stable",
     "require": {
         "guzzlehttp/guzzle": "^6.3",
         "illuminate/support": "^5.5"

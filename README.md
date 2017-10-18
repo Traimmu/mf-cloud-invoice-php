@@ -9,6 +9,7 @@
 TODO: upload to composer
 
 ```
+composer require traimmu/mf_cloud-invoice
 ```
 
 # Usage
