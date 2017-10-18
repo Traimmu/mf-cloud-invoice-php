@@ -4,6 +4,9 @@ namespace MfCloud;
 
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Client as Guzzle;
+use MfCloud\Api\Office;
+use MfCloud\Api\Partner;
+use MfCloud\Api\Item;
 use MfCloud\Api\Billing;
 
 class Client
@@ -34,6 +37,21 @@ class Client
         }
 
         $this->apiVersion = $apiVersion;
+    }
+
+    public function office()
+    {
+        return new Office($this);
+    }
+
+    public function items()
+    {
+        return new Item($this);
+    }
+
+    public function partners()
+    {
+        return new Partner($this);
     }
 
     public function billings()
