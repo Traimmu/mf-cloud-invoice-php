@@ -26,15 +26,14 @@ $client->billings()->all();
 ## Basic usage
 
 ```php
-$office = $client->office()->get(); // => returns Illuminate\Support\Collection instance
-echo $office->get('name') // => 'Sample office'
+$office = $client->office(); // => returns Traimmu\MfCloud\Invoice\Models\Office instance
+echo $office->name; // => 'Sample office'
 
-$client->office()->update([
+$office->update([
     'name' => 'section9',
     'zip' => '101-1111',
 ]);
-$client->office()->get(); // => returns Illuminate\Support\Collection instance
-echo $office->get('name') // => 'Sample office'
+echo $office->get('name'); // => 'Sample office'
 ```
 
 # Loadmap
