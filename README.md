@@ -1,3 +1,5 @@
+<!-- <?php -->
+
 # mf_cloud-invoice-php
 
 [MFクラウド請求書API](https://github.com/moneyforward/invoice-api-doc) client library for PHP
@@ -24,19 +26,31 @@ $client->billings()->all();
 ## Basic usage
 
 ```php
-// get information
-$office = $client->office()->get() // => returns Illuminate\Support\Collection instance;
+$office = $client->office()->get(); // => returns Illuminate\Support\Collection instance
 
 echo $office->get('name') // => 'Sample office'
 ```
 
-### Office
+<!--
+
 ### Billings
 ### Partners
 ### Items
+
 ## Errors
+
+-->
+
 # Development
+
+After checking out the repo, run `composer install` to install dependencies.
+
+There are no tests now.
+
 # Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/Traimmu/mf_cloud-invoice-php
+
 # License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
