@@ -6,7 +6,7 @@ use ArrayAccess;
 
 class Base implements ArrayAccess
 {
-    protected $fillable;
+    protected $fields;
 
     protected $attributes;
 
@@ -18,7 +18,7 @@ class Base implements ArrayAccess
 
     public function __get($field)
     {
-        if (! array_key_exists($field, $this->fillable)) {
+        if (! in_array($field, $this->fields, true)) {
             throw new \Exception('no such attribute');
         }
 
@@ -27,7 +27,9 @@ class Base implements ArrayAccess
 
     public function update(array $params)
     {
-        return $this->api->update($this->id, $params);
+        $this->attributes = $this->api->update($this->id, $params);
+
+        return $this;
     }
 
     public function offsetGet($offset) {

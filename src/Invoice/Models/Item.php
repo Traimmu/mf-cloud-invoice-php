@@ -6,7 +6,8 @@ use Traimmu\MfCloud\Invoice\Models\Base;
 
 class Item extends Base
 {
-    protected $fillable = [
-        'name', 'zip', 'prefecture', 'address1', 'address2', 'tel', 'fax',
+    protected $fields = [
+        'id', 'code', 'name', 'detail', 'unit_price', 'unit',
+        'quantity', 'price', 'excise', 'created_at', 'updated_at',
     ];
 }

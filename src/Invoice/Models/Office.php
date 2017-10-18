@@ -6,7 +6,7 @@ use Traimmu\MfCloud\Invoice\Models\Base;
 
 class Office extends Base
 {
-    protected $fillable = [
+    protected $fields = [
         'name', 'zip', 'prefecture', 'address1', 'address2', 'tel', 'fax',
     ];
 
