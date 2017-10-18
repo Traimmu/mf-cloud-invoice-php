@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "MfCloud\\": "src/MfCloud"
+            "Traimmu\\MfCloud\\Invoice\\": "src/Invoice"
         }
     }
 }
