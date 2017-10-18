@@ -4,9 +4,11 @@ namespace MfCloud;
 
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Client as Guzzle;
+use MfCloud\Api\Billing;
 
 class Client
 {
+
     const BASE_URL = 'https://invoice.moneyforward.com/api';
 
     protected $accessToken, $apiVersion;
@@ -34,13 +36,30 @@ class Client
         $this->apiVersion = $apiVersion;
     }
 
+    public function billings()
+    {
+        return new Billing($this);
+    }
+
     public function get(string $path, array $params = [])
     {
-        return (string)$this->guzzle->request(
-            'GET',
+        return $this->request('GET', $path, $params);
+    }
+
+    public function post(string $path, array $params = [])
+    {
+        return $this->request('POST', $path, $params);
+    }
+
+    protected function request(string $method, string $path, array $params = [])
+    {
+        $body = (string)$this->guzzle->request(
+            $method,
             $this->buildUrl($path),
             $params
         )->getBody();
+
+        return json_decode($body, true);
     }
 
     protected function buildUrl($path) : string

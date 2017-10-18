@@ -12,8 +12,7 @@
     "minimum-stability": "beta",
     "require": {
         "guzzlehttp/guzzle": "^6.3",
-        "illuminate/support": "^5.5",
-        "vlucas/phpdotenv": "^2.4"
+        "illuminate/support": "^5.5"
     },
     "autoload": {
         "psr-4": {

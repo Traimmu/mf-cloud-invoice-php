@@ -3,7 +3,6 @@
 namespace MfCloud\Api;
 
 use MfCloud\Client;
-use Illuminate\Support\Collection;
 
 class Base
 {
@@ -14,9 +13,26 @@ class Base
         $this->client = $client;
     }
 
-    public function all(array $params = []) : Collection
+    public function all(array $params = [])
     {
-        return new Collection($this->client->get($this->path, $params));
+        return $this->client->get($this->path, $params);
     }
+
+    public function find(string $id, array $params = [])
+    {
+        return $this->client->get($this->path.'/'.$id, $params);
+    }
+
+    public function create(array $params = [])
+    {
+        return $this->client->post($this->path, $params);
+    }
+
+    public function update(string $id, array $params = [])
+    {
+        return $this->client->put($this->path.'/'.$id, $params);
+    }
+
+
 }
 
