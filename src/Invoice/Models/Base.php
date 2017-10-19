@@ -35,7 +35,7 @@ class Base implements ArrayAccess, JsonSerializable
 
     public function jsonSerialize()
     {
-        return json_encode($this->attributes);
+        return $this->attributes;
     }
 
     public function toJson()
