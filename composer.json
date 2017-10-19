@@ -1,5 +1,5 @@
 {
-    "name": "traimmu/mf_cloud-invoice",
+    "name": "traimmu/mf-cloud-invoice",
     "description": "MFCloud Invoice API wrapper",
     "type": "library",
     "license": "MIT",
