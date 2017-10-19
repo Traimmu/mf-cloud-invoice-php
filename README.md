@@ -9,7 +9,7 @@ This library is inspired by [moneyforward/mf_cloud-invoice-ruby](https://github.
 # Installation
 
 ```
-composer require traimmu/mf_cloud-invoice
+composer require traimmu/mf-cloud-invoice
 ```
 
 # Usage
@@ -45,11 +45,12 @@ echo $office->name; // => '150-0033'
 - [ ] Add Exceptions
 - [ ] Add authentication for getting OAuth token
 
-<!-- ### Billings -->
-<!-- ### Partners -->
-<!-- ### Items -->
-
+<!--
+### Billings
+### Partners
+### Items
 ## Errors
+-->
 
 # Development
 
