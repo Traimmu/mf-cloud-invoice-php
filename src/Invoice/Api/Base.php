@@ -55,7 +55,7 @@ class Base
     public function create(array $params = [])
     {
         $response = $this->client->post($this->path, $this->buildBody($params));
-        return new $this->model($response);
+        return new $this->model($response, $this);
     }
 
     /*
