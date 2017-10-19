@@ -3,8 +3,9 @@
 namespace Traimmu\MfCloud\Invoice\Models;
 
 use ArrayAccess;
+use JsonSerializable;
 
-class Base implements ArrayAccess
+class Base implements ArrayAccess, JsonSerializable
 {
     protected $fields;
 
@@ -30,6 +31,21 @@ class Base implements ArrayAccess
         $this->attributes = $this->api->update($this->id, $params);
 
         return $this;
+    }
+
+    public function jsonSerialize()
+    {
+        return json_encode($this->attributes);
+    }
+
+    public function toJson()
+    {
+        return $this->jsonSerialize();
+    }
+
+    public function toArray()
+    {
+        return $this->attributes;
     }
 
     public function offsetGet($offset) {
