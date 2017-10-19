@@ -14,5 +14,6 @@ class Billing extends Base
         'subtotal', 'memo', 'payment_condition', 'total_price', 'billing_date',
         'due_date', 'sales_date', 'created_at', 'updated_at', 'billing_number',
         'note', 'document_name', 'tags',
+        'status'
     ];
 }
