@@ -72,6 +72,17 @@ Finally, add the following lines at `config/services.php`:
 ],
 ```
 
+# Example
+
+Get partners which have more than one departments:
+
+```php
+<?php
+$client->partners()->all()->filter(function ($partner) {
+  return count($partner->departments) > 0;
+});
+```
+
 # Loadmap
 
 - [ ] Add tests
@@ -91,17 +102,6 @@ Finally, add the following lines at `config/services.php`:
 ## Errors
 -->
 
-# Example
-
-Get partners which have more than one departments:
-
-```
-<?php
-$client->partners()->all()->filter(function ($partner) {
-  return count($partner->departments) > 0;
-});
-```
-
 # Development
 
 After checking out the repo, run `composer install` to install dependencies.
@@ -114,4 +114,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Traimm
 
 # License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The package is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+
