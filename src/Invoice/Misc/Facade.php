@@ -2,9 +2,9 @@
 
 namespace Traimmu\MfCloud\Invoice\Misc;
 
-use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\Facades\Facade as BaseFacade;
 
-class InvoiceFacade extends Facade
+class Facade extends BaseFacade
 {
 
     protected static function getFacadeAccessor()
