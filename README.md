@@ -46,6 +46,8 @@ echo $office->name; // => '150-0033'
 # Loadmap
 
 - [ ] Add tests
+- [ ] Add service provider for Laravel
+- [ ] Add circle.yml and build automatically
 - [ ] Add more documents
 - [ ] Add Exceptions
 - [ ] Add authentication for getting OAuth token

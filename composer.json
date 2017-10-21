@@ -14,9 +14,17 @@
         "guzzlehttp/guzzle": "^6.3",
         "illuminate/support": "^5.5"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4"
+    },
     "autoload": {
         "psr-4": {
             "Traimmu\\MfCloud\\Invoice\\": "src/Invoice"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests": "tests"
         }
     }
 }
