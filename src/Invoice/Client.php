@@ -27,7 +27,7 @@ class Client
         $this->accessToken = $accessToken;
 
         if (is_null($guzzle)) {
-            $this->guzzle = new Guzzle([
+            $guzzle = new Guzzle([
                 'headers' => [
                     'Authorization' => 'Bearer '.$this->accessToken,
                     'Content-Type' => 'application/json',
@@ -35,6 +35,8 @@ class Client
                 ]
             ]);
         }
+
+        $this->guzzle = $guzzle;
 
         $this->apiVersion = $apiVersion;
     }
@@ -76,18 +78,18 @@ class Client
 
     public function delete(string $path) : array
     {
-        return $this->request('PUT', $path);
+        return $this->request('DELETE', $path);
     }
 
     protected function request(string $method, string $path, array $params = []) : array
     {
-        $body = (string)$this->guzzle->request(
+        $body = $this->guzzle->request(
             $method,
             $this->buildUrl($path),
             $params
         )->getBody();
 
-        return json_decode($body, true);
+        return json_decode((string)$body, true);
     }
 
     protected function buildUrl($path) : string

@@ -40,7 +40,7 @@ $office->update([
     'name' => 'section9',
     'zip' => '101-1111',
 ]);
-echo $office->name; // => '150-0033'
+echo $office->name; // => 'section9'
 ```
 
 # Loadmap
