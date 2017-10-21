@@ -43,6 +43,35 @@ $office->update([
 echo $office->name; // => 'section9'
 ```
 
+# Laravel Integration
+
+Add the `Traimmu\MfCloud\Invoice\Misc\ServiceProvider` provider to the `providers` array in `config/app.php`:
+
+```php
+'providers' => [
+    // ...
+    Traimmu\MfCloud\Invoice\Misc\ServiceProvider::class,
+],
+```
+
+Then add the facade to your `aliases` array:
+
+```php
+'aliases' => [
+    // ...
+    'Slack' => Maknz\Slack\Laravel\Facade::class,
+],
+```
+
+Finally, add the following lines at `config/services.php`:
+
+```php
+// ...
+'mfcloud' => [
+    'secret' => env('MFCLOUD_INVOICE_API_TOKEN'),
+],
+```
+
 # Loadmap
 
 - [ ] Add tests
@@ -61,6 +90,17 @@ echo $office->name; // => 'section9'
 ### Items
 ## Errors
 -->
+
+# Example
+
+Get partners which have more than one departments:
+
+```
+<?php
+$client->partners()->all()->filter(function ($partner) {
+  return count($partner->departments) > 0;
+});
+```
 
 # Development
 
