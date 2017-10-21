@@ -46,10 +46,13 @@ echo $office->name; // => 'section9'
 # Loadmap
 
 - [ ] Add tests
+  - [x] client
+  - [ ] api
+  - [ ] models
 - [ ] Add service provider for Laravel
+- [ ] Add Exceptions
 - [ ] Add circle.yml and build automatically
 - [ ] Add more documents
-- [ ] Add Exceptions
 - [ ] Add authentication for getting OAuth token
 
 <!--
@@ -63,7 +66,7 @@ echo $office->name; // => 'section9'
 
 After checking out the repo, run `composer install` to install dependencies.
 
-There are no tests now.
+Then run `vendor/bin/phpunit` and ensure all tests success.
 
 # Contributing
 
