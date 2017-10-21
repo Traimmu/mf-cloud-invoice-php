@@ -59,7 +59,7 @@ Then add the facade to your `aliases` array:
 ```php
 'aliases' => [
     // ...
-    'Slack' => Maknz\Slack\Laravel\Facade::class,
+    'Invoice' => Traimmu\MfCloud\Invoice\Misc\Facade::class,
 ],
 ```
 
