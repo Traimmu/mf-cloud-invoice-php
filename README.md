@@ -30,7 +30,7 @@ $client->billings()->all();
 // => your billings
 ```
 
-## Basic usage
+## Get My Office
 
 ```php
 $office = $client->office(); // => returns Traimmu\MfCloud\Invoice\Models\Office instance
@@ -42,6 +42,27 @@ $office->update([
 ]);
 echo $office->name; // => 'section9'
 ```
+
+### Get Partners
+
+```php
+$client->partners()->all();
+$client->partners()->find('MF INVOICE PARTNER ID');
+```
+
+### Get Billings
+
+```php
+$client->billings()->all();
+```
+
+### Items
+
+```php
+$client->items()->all();
+```
+
+<!-- ## Errors -->
 
 # Laravel Integration
 
@@ -89,18 +110,11 @@ $client->partners()->all()->filter(function ($partner) {
   - [x] client
   - [ ] api
   - [ ] models
-- [ ] Add service provider for Laravel
+- [x] Add service provider for Laravel
 - [ ] Add Exceptions
 - [ ] Add circle.yml and build automatically
 - [ ] Add more documents
 - [ ] Add authentication for getting OAuth token
-
-<!--
-### Billings
-### Partners
-### Items
-## Errors
--->
 
 # Development
 
