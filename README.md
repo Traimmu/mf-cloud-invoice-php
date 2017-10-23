@@ -112,8 +112,10 @@ $client->partners()->all()->filter(function ($partner) {
   - [ ] models
 - [x] Add service provider for Laravel
 - [ ] Add Eloquent model like methods and relationships
-  - [ ] api->firstOrCreate()
+  - [x] api->firstOrCreate()
   - [ ] Create Department model
+  - [ ] `$client->partners()->first()->departments()->create($params)`
+  - [ ] `$client->partners()->first()->departments->first()`
   - [ ] Partner hasMany Departments
   - [ ] Department hasMany Billings
   - [ ] Billing hasMany Items
