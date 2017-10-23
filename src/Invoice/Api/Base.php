@@ -71,6 +71,22 @@ class Base
         return new $this->model($response, $this);
     }
 
+    public function firstOrCreate(array $params)
+    {
+        $query = $this->all();
+        foreach ($params as $key => $value) {
+            $query = $query->where($key, $value);
+        }
+        $first = $query->first();
+
+        if (is_null($first)) {
+            return $this->create($params);
+        }
+
+        return $first;
+    }
+
+
     /*
      * Delete a record in the repository.
      */

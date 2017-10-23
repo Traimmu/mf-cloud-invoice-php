@@ -13,6 +13,6 @@ class Partner extends Base
 
     public function departments()
     {
-        return collect($this['attributes']['departments']);
+        return collect($this['departments']);
     }
 }
