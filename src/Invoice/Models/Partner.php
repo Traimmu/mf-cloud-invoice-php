@@ -3,6 +3,7 @@
 namespace Traimmu\MfCloud\Invoice\Models;
 
 use Traimmu\MfCloud\Invoice\Models\Base;
+use Traimmu\MfCloud\Invoice\Models\Department;
 
 class Partner extends Base
 {
@@ -13,6 +14,8 @@ class Partner extends Base
 
     public function departments()
     {
-        return collect($this['departments']);
+        return collect($this['departments'])->map(function ($attributes) {
+            return new Department($attributes);
+        });
     }
 }

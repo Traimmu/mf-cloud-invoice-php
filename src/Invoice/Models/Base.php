@@ -11,7 +11,7 @@ class Base implements ArrayAccess, JsonSerializable
 
     protected $attributes;
 
-    public function __construct(array $params, $api)
+    public function __construct(array $params, $api = null)
     {
         $this->attributes = $params;
         $this->api = $api;
