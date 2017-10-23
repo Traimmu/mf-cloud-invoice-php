@@ -111,6 +111,12 @@ $client->partners()->all()->filter(function ($partner) {
   - [ ] api
   - [ ] models
 - [x] Add service provider for Laravel
+- [ ] Add Eloquent model like methods and relationships
+  - [ ] api->firstOrCreate()
+  - [ ] Create Department model
+  - [ ] Partner hasMany Departments
+  - [ ] Department hasMany Billings
+  - [ ] Billing hasMany Items
 - [ ] Add Exceptions
 - [ ] Add circle.yml and build automatically
 - [ ] Add more documents
