@@ -24,7 +24,7 @@ class Client
         Guzzle $guzzle = null,
         string $apiVersion = 'v1'
     ) {
-        $this->accessToken = $accessToken;
+        $this->setAccessToken($accessToken);
 
         if (is_null($guzzle)) {
             $guzzle = new Guzzle([
@@ -97,4 +97,14 @@ class Client
         return implode('/', [static::BASE_URL, $this->apiVersion, $path]);
     }
 
+    public function setAccessToken(string $token)
+    {
+        $this->accessToken = $token;
+        return $this;
+    }
+
+    public function getAccessToken()
+    {
+        return $this->accessToken;
+    }
 }

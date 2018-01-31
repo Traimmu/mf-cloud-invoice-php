@@ -33,4 +33,12 @@ final class ClientTest extends TestCase
         $this->assertInstanceOf(Partner::class, $this->client->partners());
     }
 
+    public function testSetAccessToken()
+    {
+        $this->client->setAccessToken('MFCLOUD_INVOICE_API_TOKEN_CHANGED');
+        $this->assertEquals(
+            'MFCLOUD_INVOICE_API_TOKEN_CHANGED',
+            $this->client->getAccessToken()
+        );
+    }
 }

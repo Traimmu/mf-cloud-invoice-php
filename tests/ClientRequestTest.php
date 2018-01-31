@@ -75,5 +75,4 @@ final class ClientRequestTest extends TestCase
         $this->client->guzzle->method('request')->with($this->equalTo($method));
         return $this;
     }
-
 }
