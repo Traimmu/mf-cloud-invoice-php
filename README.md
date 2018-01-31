@@ -1,9 +1,10 @@
-<!-- <?php -->
+<!-- vim:set filetype=php <?php -->
 
 [![Latest Stable Version](https://poser.pugx.org/traimmu/mf-cloud-invoice/v/stable)](https://packagist.org/packages/traimmu/mf-cloud-invoice)
 [![Latest Unstable Version](https://poser.pugx.org/traimmu/mf-cloud-invoice/v/unstable)](https://packagist.org/packages/traimmu/mf-cloud-invoice)
 [![License](https://poser.pugx.org/traimmu/mf-cloud-invoice/license)](https://packagist.org/packages/traimmu/mf-cloud-invoice)
 [![Monthly Downloads](https://poser.pugx.org/traimmu/mf-cloud-invoice/d/monthly)](https://packagist.org/packages/traimmu/mf-cloud-invoice)
+[![CircleCI](https://circleci.com/gh/Traimmu/mf-cloud-invoice-php.svg?style=svg)](https://circleci.com/gh/Traimmu/mf-cloud-invoice-php)
 
 # mf_cloud-invoice-php
 
