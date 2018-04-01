@@ -14,7 +14,15 @@ class Client
 
     const BASE_URL = 'https://invoice.moneyforward.com/api';
 
-    protected $accessToken, $apiVersion;
+    /* @var string */
+    protected $accessToken;
+
+    /* @var string */
+    protected $apiVersion;
+
+    /* public for test */
+    /* @var Guzzle */
+    public $guzzle;
 
     /**
      * Create a new Traimmu\MfCloud\Invoice client.
@@ -27,13 +35,7 @@ class Client
         $this->setAccessToken($accessToken);
 
         if (is_null($guzzle)) {
-            $guzzle = new Guzzle([
-                'headers' => [
-                    'Authorization' => 'Bearer '.$this->accessToken,
-                    'Content-Type' => 'application/json',
-                    'Accept' => '*/*',
-                ]
-            ]);
+            $guzzle = new Guzzle();
         }
 
         $this->guzzle = $guzzle;
@@ -86,7 +88,9 @@ class Client
         $body = $this->guzzle->request(
             $method,
             $this->buildUrl($path),
-            $params
+            array_merge($params, [
+                'headers' => $this->getHeaders()
+            ])
         )->getBody();
 
         return json_decode((string)$body, true);
@@ -101,6 +105,14 @@ class Client
     {
         $this->accessToken = $token;
         return $this;
+    }
+
+    private function getHeaders() {
+        return [
+            'Authorization' => 'Bearer '.$this->accessToken,
+            'Content-Type' => 'application/json',
+            'Accept' => '*/*',
+        ];
     }
 
     public function getAccessToken()
