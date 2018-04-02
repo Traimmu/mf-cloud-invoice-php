@@ -28,7 +28,7 @@ class Client
      * Create a new Traimmu\MfCloud\Invoice client.
      */
     public function __construct(
-        string $accessToken,
+        string $accessToken = '',
         Guzzle $guzzle = null,
         string $apiVersion = 'v1'
     ) {

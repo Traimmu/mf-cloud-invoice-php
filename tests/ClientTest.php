@@ -18,6 +18,12 @@ final class ClientTest extends TestCase
         $this->client = new Client('MFCLOUD_INVOICE_API_TOKEN');
     }
 
+    public function testAcceptNullAccessToken()
+    {
+        $client = new Client();
+        $this->assertInstanceOf(Client::class, $client);
+    }
+
     public function testItemsReturnsItemApi()
     {
         $this->assertInstanceOf(Item::class, $this->client->items());
