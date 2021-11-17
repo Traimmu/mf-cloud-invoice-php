@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07e4dda617a2f95864e9b7c011527afb",
+    "content-hash": "f3ad63fd39b1d08bf1b6ff4e6ec9d8a5",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -300,16 +300,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.5.17",
+            "version": "v5.5.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "132b06edaab3808f63943004911d58785f164ab4"
+                "reference": "7540abdf66efe232bb657b9a5982fbb0d4de428f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/132b06edaab3808f63943004911d58785f164ab4",
-                "reference": "132b06edaab3808f63943004911d58785f164ab4",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/7540abdf66efe232bb657b9a5982fbb0d4de428f",
+                "reference": "7540abdf66efe232bb657b9a5982fbb0d4de428f",
                 "shasum": ""
             },
             "require": {
@@ -320,7 +320,7 @@
                 "php": ">=7.0"
             },
             "replace": {
-                "tightenco/collect": "self.version"
+                "tightenco/collect": "<5.5.33"
             },
             "suggest": {
                 "illuminate/filesystem": "Required to use the composer class (5.2.*).",
@@ -353,7 +353,11 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2017-10-17T12:18:29+00:00"
+            "support": {
+                "issues": "https://github.com/laravel/framework/issues",
+                "source": "https://github.com/laravel/framework"
+            },
+            "time": "2018-03-09T16:54:15+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -2140,5 +2144,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
 }
